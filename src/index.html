@@ -8,41 +8,28 @@
 <h1>Vending Machine</h1>
 <h2>Feed your sweet tooth!</h2>
 
-
 <table border="1">
 	<tr>
 		<td>
-			<div class="candy" style="width:205px; height:72px; border:1px solid blue;" onclick="myFunction()"><img src="snickers.jpg" /></div><br />
-			<div class="candy" style="width:205px; height:72px; border:1px solid blue;"><img src="snickers.jpg" /></div><br />
-			<div class="candy" style="width:205px; height:72px; border:1px solid blue;"><img src="snickers.jpg" /></div><br />
+			<div class="candy" style="width:200px; height:72px; border:1px solid blue;"><img src="snickers.jpg" /></div><br />
+			<div class="candy" style="width:200px; height:72px; border:1px solid blue;"><img src="snickers.jpg" /></div><br />
+			<div class="candy" style="width:200px; height:72px; border:1px solid blue;"><img src="snickers.jpg" /></div><br />
 		</td>
 	</tr>
 	<tr>
-		<td style="padding:5px;" align="center"><button type="button" id="credit-button">ADD A CREDIT</button></td>
-	</tr>
-	<tr>
-		<td style="padding:5px;">You have <span id="credits-remaining-span">3</span> credits remaining.</td>
+		<td style="padding:5px;" align="center">
+
+			<form>
+				<input type="text" id="number" value="0" style="width:50px;" />
+				<input type="button" onclick="incrementValue()" value="ADD A CREDIT" />
+			</form>
+
+		</td>
 	</tr>
 </table>
 
-
-<script src="scripts.js"></script>
-
-
-<!-- <table border="1">
-	<tr>
-		<td>Candy display inside vending machine.</td>
-		<td>Buttons Here (A1 or just Snickers?)</td>
-	</tr>
-	<tr>
-		<td>You purchased: list of candy.</td>
-		<td>1 dollar, 1 dollar, 1 dollar</td>
-	</tr>
-</table> -->
-
-<!-- <script src="jquery-3.2.1.min.js"></script>
 <script src="underscore-min.js"></script>
-<script src="backbone-min.js"></script> -->
+<script src="scripts.js"></script>
 
 </body>
 </html>
