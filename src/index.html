@@ -8,28 +8,38 @@
 <h1>Vending Machine</h1>
 <h2>Feed your sweet tooth!</h2>
 
-<table border="1">
-	<tr>
+<table border="1" width="210">
+	<tr height="300">
 		<td>
-			<div class="candy" style="width:200px; height:72px; border:1px solid blue;"><img src="snickers.jpg" /></div><br />
-			<div class="candy" style="width:200px; height:72px; border:1px solid blue;"><img src="snickers.jpg" /></div><br />
-			<div class="candy" style="width:200px; height:72px; border:1px solid blue;"><img src="snickers.jpg" /></div><br />
+			<div class="candy"><img src="snickers.jpg" /></div><br />
+			<div class="candy"><img src="babyruth.jpg" /></div><br />
+			<div class="candy"><img src="twix.jpg" /></div><br />
 		</td>
 	</tr>
-	<tr>
+	<tr height="80">
 		<td style="padding:5px;" align="center">
 
-			<form>
+			<form id='vendingForm'>
 				<input type="text" id="number" value="0" style="width:50px;" />
-				<input type="button" onclick="incrementValue()" value="ADD A CREDIT" />
+				<input type="button" id="btnAddCredit" onclick="incrementValue()" value="ADD A CREDIT" />
 			</form>
 
 		</td>
 	</tr>
 </table>
 
+<script src="jquery-3.2.1.min.js"></script>
 <script src="underscore-min.js"></script>
 <script src="scripts.js"></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+

@@ -3,23 +3,55 @@
 // Handle candy removals
 var candy = document.getElementsByClassName("candy");
 
-var snickerGone1 = function() {candy[0].innerHTML = "Snicker 1 Gone!";};
-var snickerGone2 = function() {candy[1].innerHTML = "Snicker 2 Gone!";};
-var snickerGone3 = function() {candy[2].innerHTML = "Snicker 3 Gone!";};
+var snickerGone = function() {candy[0].innerHTML = ""; decrementValue()};
+var babyruthGone = function() {candy[1].innerHTML = ""; decrementValue()};
+var twixGone = function() {candy[2].innerHTML = ""; decrementValue()};
 
 
-candy[0].addEventListener('click', snickerGone1, false);
-candy[1].addEventListener('click', snickerGone2, false);
-candy[2].addEventListener('click', snickerGone3, false);
-
-
+candy[0].addEventListener('click', snickerGone, false);
+candy[1].addEventListener('click', babyruthGone, false);
+candy[2].addEventListener('click', twixGone, false);
 
 
 // Handle credit value
 function incrementValue()
 {
-    var value = parseInt(document.getElementById('number').value, 5);
+    var value = parseInt(document.getElementById('number').value, 0);
     value = isNaN(value) ? 0 : value;
     value++;
     document.getElementById('number').value = value;
 }
+
+
+
+// Test decrement value
+function decrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 0);
+    value = isNaN(value) ? 0 : value;
+    value--;
+    document.getElementById('number').value = value;
+}
+
+
+
+// How can I Prevent a negative value ????? Currently the user must press ENTER key to activate this function
+var numberChecker = document.getElementById("number");
+
+var checkForZero = function() {
+	if (numberChecker.value < 1) {
+	numberChecker.value = 0;
+	}
+}
+
+numberChecker.addEventListener('onchange', checkForZero, false);
+
+
+// Trying to prevent page from refreshing
+document.getElementById('vendingForm').addEventListener('submit', function(e) {
+    search(document.getElementById('number'));
+    e.preventDefault();
+}, false);
+
+
+
