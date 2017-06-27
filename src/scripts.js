@@ -35,16 +35,18 @@ function decrementValue()
 
 
 
+
+// Trying a self-invoking function
 // How can I Prevent a negative value ????? Currently the user must press ENTER key to activate this function
 var numberChecker = document.getElementById("number");
 
-var checkForZero = function() {
+var checkForZero = (function() {
 	if (numberChecker.value < 1) {
 	numberChecker.value = 0;
 	}
-}
+})();
 
-numberChecker.addEventListener('onchange', checkForZero, false);
+numberChecker.addEventListener('onblur', checkForZero, false);
 
 
 // Trying to prevent page from refreshing
@@ -52,6 +54,5 @@ document.getElementById('vendingForm').addEventListener('submit', function(e) {
     search(document.getElementById('number'));
     e.preventDefault();
 }, false);
-
 
 
