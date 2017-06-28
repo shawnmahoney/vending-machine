@@ -1,19 +1,22 @@
 
+// Initialize value of 'number' input aka Credit Value
+document.getElementById('number').value = 0;
+
 
 // Handle candy removals
 var candy = document.getElementsByClassName("candy");
 
-var snickerGone = function() {candy[0].innerHTML = ""; decrementValue()};
-var babyruthGone = function() {candy[1].innerHTML = ""; decrementValue()};
-var twixGone = function() {candy[2].innerHTML = ""; decrementValue()};
+var snickerGone = function() {candy[0].innerHTML = ""};
+var babyruthGone = function() {candy[1].innerHTML = ""};
+var twixGone = function() {candy[2].innerHTML = ""};
 
 
-candy[0].addEventListener('click', snickerGone, false);
-candy[1].addEventListener('click', babyruthGone, false);
-candy[2].addEventListener('click', twixGone, false);
+candy[0].addEventListener('click', decrementValueSnickers, false);
+candy[1].addEventListener('click', decrementValueBabyRuth, false);
+candy[2].addEventListener('click', decrementValueTwix, false);
 
 
-// Handle credit value
+// Increment Credit Value
 function incrementValue()
 {
     var value = parseInt(document.getElementById('number').value, 0);
@@ -23,36 +26,57 @@ function incrementValue()
 }
 
 
+// Evaluate Credit Value and decrement value - handle Snickers
+function decrementValueSnickers() {
 
-// Test decrement value
-function decrementValue()
-{
-    var value = parseInt(document.getElementById('number').value, 0);
-    value = isNaN(value) ? 0 : value;
-    value--;
-    document.getElementById('number').value = value;
+    if (document.getElementById('number').value < 1)
+    {alert('Add Money!')}
+
+    else
+
+    {
+        var value = parseInt(document.getElementById('number').value, 0);
+        value = isNaN(value) ? 0 : value;
+        value--;
+        document.getElementById('number').value = value;
+        snickerGone();
+    }
 }
 
 
+// Evaluate Credit Value and decrement value - handle Baby Ruth
+function decrementValueBabyRuth() {
+
+    if (document.getElementById('number').value < 1)
+    {alert('Add Money!')}
+
+    else
+
+    {
+        var value = parseInt(document.getElementById('number').value, 0);
+        value = isNaN(value) ? 0 : value;
+        value--;
+        document.getElementById('number').value = value;
+        babyruthGone();
+    }
+}
 
 
-// Trying a self-invoking function
-// How can I Prevent a negative value ????? Currently the user must press ENTER key to activate this function
-var numberChecker = document.getElementById("number");
+// Evaluate Credit Value and decrement value - handle Twix
+function decrementValueTwix() {
 
-var checkForZero = (function() {
-	if (numberChecker.value < 1) {
-	numberChecker.value = 0;
-	}
-})();
+    if (document.getElementById('number').value < 1)
+    {alert('Add Money!')}
 
-numberChecker.addEventListener('onblur', checkForZero, false);
+    else
 
-
-// Trying to prevent page from refreshing
-document.getElementById('vendingForm').addEventListener('submit', function(e) {
-    search(document.getElementById('number'));
-    e.preventDefault();
-}, false);
+    {
+        var value = parseInt(document.getElementById('number').value, 0);
+        value = isNaN(value) ? 0 : value;
+        value--;
+        document.getElementById('number').value = value;
+        twixGone();
+    }
+}
 
 
