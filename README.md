@@ -7,3 +7,5 @@ This is a vending machine simulator using:
 - CSS
 - Javascript
 - PNG Images
+
+The script has been finalized.
